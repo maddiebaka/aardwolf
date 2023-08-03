@@ -43,13 +43,19 @@ jobs:
   # PostgreSQL Service
   # Source: https://docs.github.com/en/actions/using-containerized-services/creating-postgresql-service-containers
   setup-postgresql: 
+    runs-on: ubuntu-latest
+    steps:
     - name: Checkout code
       uses: postgresql@v0.1  
 
 
   # Build it?  
-  compile-aardwolf:         
-    uses: actions/checkout@v3
+  compile-aardwolf:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code    
+      uses: actions/checkout@v3.5.3
+
     - run: echo "BEFORE SCRIPT"
     - run: psql -c 'CREATE DATABASE aardwolf_testing;' -U postgres
     - run: >-

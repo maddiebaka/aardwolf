@@ -32,7 +32,7 @@ Create the DB user
 
 Give `aardwolf user` all permissions to the `aardwolf-db` itself.
     
-    grant all privileges on database test_db to test_user;
+    grant all privileges on database aardwolf to aardwolf_user;
 
 Exit the postgresql command line
     \q
