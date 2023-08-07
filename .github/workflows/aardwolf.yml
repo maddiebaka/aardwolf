@@ -57,7 +57,7 @@ jobs:
       # Test the database connection as aardwolf_user
       - name: Test aardwolf_user database connection
         run: |
-          pg_isready -d aardwolf_testing -h 127.0.0.1 -p 5432 -U aardwolf_user
+          pg_isready ${{ env.DATABASE_URL }}
 
       - run: diesel migration run
       - run: popd
